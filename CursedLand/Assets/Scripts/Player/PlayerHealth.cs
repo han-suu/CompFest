@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 120;
+        maxHealth = 130;
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
         //InputActions.Player.Damage.performed += HandleDamage =>
@@ -58,4 +58,15 @@ public class PlayerHealth : MonoBehaviour
 
 		healthBar.SetHealth(currentHealth);
 	}
+
+    public void kutuk(){
+        healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
+    }
+
+    // public void Healing(){
+    //     // currentHealth += heal;
+
+	// 	healthBar.SetMaxHealth(currentHealth);
+    // }
 }

@@ -49,7 +49,7 @@ public class TimeManager : MonoBehaviour
 
     private IEnumerator StartDay()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(30f);
         isNight = false;
         isDay = true;
         Debug.Log("Sekarang Siang");
@@ -62,7 +62,7 @@ public class TimeManager : MonoBehaviour
 
     private IEnumerator StartNight()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(30f);
 
         isDay = false;
         isNight = true;

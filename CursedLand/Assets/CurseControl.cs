@@ -21,7 +21,7 @@ public class CurseControl : MonoBehaviour
     [SerializeField] int HealthMaxBuff = 10;
     //[SerializeField] int HealthRestoreBuff = 10;
     //[SerializeField] float SpeedUpBuff = 0.01f;
-
+    public HealthBar healthBar;
 
     void Start()
     {
@@ -131,14 +131,15 @@ public class CurseControl : MonoBehaviour
         {
             HealthBuff.currentHealth = HealthBuff.maxHealth;
         }
-        
+        HealthBuff.kutuk();
     }
 
     private void buffHP()
     {
         HP = false;
-        HealthBuff.maxHealth += HealthMaxBuff;
+        HealthBuff.maxHealth += HealthBuff.maxHealth+HealthMaxBuff;
         HealthBuff.currentHealth = HealthBuff.maxHealth;
+        HealthBuff.kutuk();
         //if (HealthBuff.currentHealth > HealthBuff.maxHealth)
         //{
         //    HealthBuff.currentHealth = HealthBuff.maxHealth;
