@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
 	public int currentHealth;
 
 	public HealthBar healthBar;
+    public TimeManager Time;
 
     void Awake()
     {
@@ -47,6 +48,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth < 1)
         {
+            Debug.Log(Time.Day);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }

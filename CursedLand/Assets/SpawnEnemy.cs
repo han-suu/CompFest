@@ -30,7 +30,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         while (!isGameOver)
         {
-            Debug.Log("Spawn enemy work");
+            // Debug.Log("Spawn enemy work");
             int randomPos = Random.Range(0, MaxSpawnPosition);
             Instantiate(Monster[Random.Range(0, MaxMonster)], SpawnPosition[randomPos].transform.position, Quaternion.identity);
             yield return new WaitForSeconds(SpawnDelay);

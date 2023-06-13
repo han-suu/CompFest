@@ -6,6 +6,8 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
 
+    public AudioSource damageSound;
+    public AudioSource deadSound;
     [SerializeField]
 	private int maxHealth, currentHealth;
     public UnityEvent<GameObject> OnHitWithReference, OnDeathWithReference;
@@ -32,10 +34,12 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            // damageSound.Play();
             OnHitWithReference?.Invoke(sender);
         }
         else
         {
+            // deadSound.Play();
             OnDeathWithReference?.Invoke(sender);
             isDead = true;
             Destroy(gameObject);

@@ -9,6 +9,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject NightPanel;
 
     public bool isDay, isNight;
+    public int Day;
     // Start is called before the first frame update
     private static TimeManager instance;
     //private PlayerInput playerInput;
@@ -28,6 +29,7 @@ public class TimeManager : MonoBehaviour
     }
     void Start()
     {
+        Day = 1;
         isDay = true;
         StartCoroutine(StartNight());
     }
@@ -49,20 +51,29 @@ public class TimeManager : MonoBehaviour
 
     private IEnumerator StartDay()
     {
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(5f);
+=======
+        yield return new WaitForSeconds(10f);
+>>>>>>> Stashed changes
         isNight = false;
         isDay = true;
         Debug.Log("Sekarang Siang");
         StartCoroutine(StartNight());
         //NightPanel.SetActive(false);
         //DayPanel.SetActive(true);
-
+        Day+=1;
+        // Debug.Log(Day);
 
     }
 
     private IEnumerator StartNight()
     {
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(5f);
+=======
+        yield return new WaitForSeconds(10f);
+>>>>>>> Stashed changes
 
         isDay = false;
         isNight = true;

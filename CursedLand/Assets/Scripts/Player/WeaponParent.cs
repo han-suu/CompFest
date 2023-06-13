@@ -15,6 +15,7 @@ public class WeaponParent : MonoBehaviour
 
     public bool IsAttacking { get; private set; }
 
+    public AudioSource attackSound;
     [SerializeField]
     public int dmg;
 
@@ -56,6 +57,7 @@ public class WeaponParent : MonoBehaviour
         attackBlocked = true;
         StartCoroutine(DelayAttack());
         DetectColliders(dmg);
+        attackSound.Play();
     }
 
     private IEnumerator DelayAttack()

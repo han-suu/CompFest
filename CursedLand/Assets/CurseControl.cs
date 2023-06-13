@@ -64,13 +64,13 @@ public class CurseControl : MonoBehaviour
             if (!isChoosed)
             {
                 CurseUi.SetActive(true);
-                Debug.Log("ATAS");
+                // Debug.Log("ATAS");
                 playerInput.testing();
             }
             else
             {
                 CurseUi.SetActive(false);
-                Debug.Log("BAWAH");
+                // Debug.Log("BAWAH");
                 
             }
         }

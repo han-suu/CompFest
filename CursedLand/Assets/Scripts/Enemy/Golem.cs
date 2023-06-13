@@ -64,7 +64,7 @@ public class Golem : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             //target = null;
-            Debug.Log("Keluar");
+            // Debug.Log("Keluar");
         }
     }
     private void Update()
