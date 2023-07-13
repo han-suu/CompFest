@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
 	PlayerInputAction InputActions;
@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 	public int currentHealth;
 
 	public HealthBar healthBar;
+    [SerializeField] TextMeshProUGUI TextMaxHealthUI;
+    [SerializeField] TextMeshProUGUI TextHealthUI;
     public TimeManager Time;
 
     void Awake()
@@ -20,9 +22,11 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 120;
+        maxHealth = 100;
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+        SetUIMaxHP(maxHealth);
+        SetUIHP(currentHealth);
         //InputActions.Player.Damage.performed += HandleDamage =>
         //{
         //    Debug.Log("ADUH");
@@ -59,5 +63,13 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
 		healthBar.SetHealth(currentHealth);
+        SetUIHP(currentHealth);
 	}
+
+    public void SetUIMaxHP(int health){
+        TextMaxHealthUI.text = health.ToString ();
+    }
+    public void SetUIHP(int health){
+        TextHealthUI.text = health.ToString ();
+    }
 }

@@ -127,9 +127,13 @@ public class CurseControl : MonoBehaviour
     {
         HP = true;
         HealthBuff.maxHealth /= 2;
+        HealthBuff.healthBar.SetMaxHealth(HealthBuff.maxHealth);
+        HealthBuff.SetUIMaxHP(HealthBuff.maxHealth);
         if (HealthBuff.currentHealth > HealthBuff.maxHealth)
         {
             HealthBuff.currentHealth = HealthBuff.maxHealth;
+            HealthBuff.healthBar.SetHealth(HealthBuff.currentHealth);
+            HealthBuff.SetUIHP(HealthBuff.currentHealth);
         }
         
     }
@@ -137,8 +141,15 @@ public class CurseControl : MonoBehaviour
     private void buffHP()
     {
         HP = false;
+        HealthBuff.maxHealth *= 2;
         HealthBuff.maxHealth += HealthMaxBuff;
         HealthBuff.currentHealth = HealthBuff.maxHealth;
+
+        HealthBuff.healthBar.SetMaxHealth(HealthBuff.maxHealth);
+        HealthBuff.healthBar.SetHealth(HealthBuff.maxHealth);
+
+        HealthBuff.SetUIMaxHP(HealthBuff.maxHealth);
+        HealthBuff.SetUIHP(HealthBuff.currentHealth);
         //if (HealthBuff.currentHealth > HealthBuff.maxHealth)
         //{
         //    HealthBuff.currentHealth = HealthBuff.maxHealth;
