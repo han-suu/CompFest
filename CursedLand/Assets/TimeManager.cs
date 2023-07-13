@@ -9,7 +9,7 @@ public class TimeManager : MonoBehaviour
     [SerializeField] private GameObject NightPanel;
 
     public bool isDay, isNight;
-    public int Day;
+    public static int Day;
     // Start is called before the first frame update
     private static TimeManager instance;
     //private PlayerInput playerInput;
@@ -29,7 +29,7 @@ public class TimeManager : MonoBehaviour
     }
     void Start()
     {
-        Day = 1;
+        Day = 0;
         isDay = true;
         StartCoroutine(StartNight());
     }

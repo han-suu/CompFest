@@ -13,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
 	public HealthBar healthBar;
     [SerializeField] TextMeshProUGUI TextMaxHealthUI;
     [SerializeField] TextMeshProUGUI TextHealthUI;
-    public TimeManager Time;
 
     void Awake()
     {
@@ -52,7 +51,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth < 1)
         {
-            Debug.Log(Time.Day);
+            Debug.Log(TimeManager.Day);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
