@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,12 +11,6 @@ public class PlayerHealth : MonoBehaviour
 	public int currentHealth;
 
 	public HealthBar healthBar;
-<<<<<<< Updated upstream
-=======
-    [SerializeField] public TextMeshProUGUI TextMaxHealthUI;
-    [SerializeField] TextMeshProUGUI TextHealthUI;
-    [SerializeField] TimeManager TimeM;
->>>>>>> Stashed changes
 
     void Awake()
     {
@@ -27,15 +19,9 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-<<<<<<< Updated upstream
         maxHealth = 130;
-=======
-        maxHealth = 100;
->>>>>>> Stashed changes
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
-        SetUIMaxHP(maxHealth);
-        SetUIHP(currentHealth);
         //InputActions.Player.Damage.performed += HandleDamage =>
         //{
         //    Debug.Log("ADUH");
@@ -61,10 +47,6 @@ public class PlayerHealth : MonoBehaviour
     {
         if (currentHealth < 1)
         {
-<<<<<<< Updated upstream
-=======
-            Debug.Log(TimeM.Day);
->>>>>>> Stashed changes
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
@@ -75,10 +57,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
 
 		healthBar.SetHealth(currentHealth);
-        SetUIHP(currentHealth);
 	}
 
-<<<<<<< Updated upstream
     public void kutuk(){
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
@@ -89,12 +69,4 @@ public class PlayerHealth : MonoBehaviour
 
 	// 	healthBar.SetMaxHealth(currentHealth);
     // }
-=======
-    public void SetUIMaxHP(int health){
-        TextMaxHealthUI.text = health.ToString ();
-    }
-    public void SetUIHP(int health){
-        TextHealthUI.text = health.ToString ();
-    }
->>>>>>> Stashed changes
 }

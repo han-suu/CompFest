@@ -127,43 +127,19 @@ public class CurseControl : MonoBehaviour
     {
         HP = true;
         HealthBuff.maxHealth /= 2;
-        HealthBuff.healthBar.SetMaxHealth(HealthBuff.maxHealth);
-        HealthBuff.SetUIMaxHP(HealthBuff.maxHealth);
-
         if (HealthBuff.currentHealth > HealthBuff.maxHealth)
         {
             HealthBuff.currentHealth = HealthBuff.maxHealth;
-            HealthBuff.healthBar.SetHealth(HealthBuff.currentHealth);
-            HealthBuff.SetUIHP(HealthBuff.currentHealth);
         }
-<<<<<<< Updated upstream
         HealthBuff.kutuk();
-=======
-        
-        
-        
->>>>>>> Stashed changes
     }
 
     private void buffHP()
     {
         HP = false;
-<<<<<<< Updated upstream
         HealthBuff.maxHealth += HealthBuff.maxHealth+HealthMaxBuff;
         HealthBuff.currentHealth = HealthBuff.maxHealth;
         HealthBuff.kutuk();
-=======
-        HealthBuff.maxHealth *= 2;
-        HealthBuff.maxHealth += HealthMaxBuff;
-        HealthBuff.currentHealth = HealthBuff.maxHealth;
-
-        HealthBuff.healthBar.SetMaxHealth(HealthBuff.maxHealth);
-        HealthBuff.healthBar.SetHealth(HealthBuff.maxHealth);
-
-        HealthBuff.SetUIMaxHP(HealthBuff.maxHealth);
-        HealthBuff.SetUIHP(HealthBuff.currentHealth);
-        // HealthBuff.TextHealthUI.text = HealthBuff.currentHealth.ToString();
->>>>>>> Stashed changes
         //if (HealthBuff.currentHealth > HealthBuff.maxHealth)
         //{
         //    HealthBuff.currentHealth = HealthBuff.maxHealth;
