@@ -49,7 +49,11 @@ public class TimeManager : MonoBehaviour
 
     private IEnumerator StartDay()
     {
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(30f);
+=======
+        yield return new WaitForSeconds(10f);
+>>>>>>> Stashed changes
         isNight = false;
         isDay = true;
         Debug.Log("Sekarang Siang");
@@ -62,7 +66,11 @@ public class TimeManager : MonoBehaviour
 
     private IEnumerator StartNight()
     {
+<<<<<<< Updated upstream
         yield return new WaitForSeconds(30f);
+=======
+        yield return new WaitForSeconds(10f);
+>>>>>>> Stashed changes
 
         isDay = false;
         isNight = true;
